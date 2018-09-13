@@ -1,0 +1,5 @@
+DB_NAME=riverlearn
+DB_USER=app
+DB_PASS=app
+DB_SERVICE=postgres
+DB_PORT=5432
