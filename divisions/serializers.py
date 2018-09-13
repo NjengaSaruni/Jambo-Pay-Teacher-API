@@ -162,15 +162,15 @@ class ClassSerializer(AbstractFieldsMixin, serializers.ModelSerializer):
         fields = '__all__'
 
 
-class ClassListSerializer(AbstractFieldsMixin, serializers.ModelSerializer):
+class ClassListSerializer(serializers.ModelSerializer):
     level = ClassLevelInlineSerializer(read_only=True)
     stream = StreamInlineSerializer(read_only=True)
-    class_teacher = TeacherInlineSerializer(read_only=True)
+    teachers = TeacherInlineSerializer(read_only=True, many=True)
     created_by = UserInlineSerializer(read_only=True)
 
     class Meta:
         model = Class
-        fields = ('id', 'created_by','name','stream', 'level', 'class_teacher', 'created_at', 'updated_at')
+        fields = ('id', 'created_by','name','stream', 'level', 'created_at', 'updated_at', 'teachers')
 
 
 class ClassDetailSerializer(AbstractFieldsMixin, serializers.ModelSerializer):

@@ -41,7 +41,7 @@ class ClassLevelDetailView(GetQuerysetMixin, generics.RetrieveUpdateDestroyAPIVi
     queryset = ClassLevel.objects.all()
 
 
-class ClassListCreateView(GetQuerysetMixin, generics.ListCreateAPIView):
+class ClassListCreateView(generics.ListCreateAPIView):
     serializer_class = ClassSerializer
     queryset = Class.objects.all()
     filter_class = ClassFilter
@@ -96,7 +96,7 @@ class StudentDetailView(GetQuerysetMixin, generics.RetrieveUpdateDestroyAPIView)
             return StudentListSerializer
         return StudentSerializer
 
-class TeacherListCreateView(GetQuerysetMixin, generics.ListCreateAPIView):
+class TeacherListCreateView(generics.ListCreateAPIView):
     serializer_class = TeacherSerializer
     queryset = Teacher.objects.all()
     search_fields = (

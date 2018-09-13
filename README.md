@@ -1,4 +1,4 @@
-# API for the RiverLearn [Portal](http://www.riverlearn.com)
+# API for the JamboPay Teacher [APP](http://www.riverlearn.com)
 
 # To run
    * Install docker and docker-compose

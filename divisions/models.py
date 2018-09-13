@@ -20,9 +20,6 @@ class Stream(AbstractBase):
     description = models.TextField(null=True, blank=True)
     color = models.ForeignKey(Color, null=True, blank=True)
 
-    def __unicode__(self):
-        return '{} - {}'.format(self.created_by.institution.name, self.name)
-
     class Meta:
         ordering = ('name',)
         app_label = 'divisions'
@@ -34,8 +31,8 @@ class ClassLevel(AbstractBase):
     name = models.CharField(max_length=255)
     value = models.PositiveSmallIntegerField(default=1)
 
-    def __unicode__(self):
-        return '{} - {} : {}'.format(self.created_by.institution.name, self.name, self.value)
+    # def __unicode__(self):
+    #     # return '{} - {} : {}'.format(self.created_by.institution.name, self.name, self.value)
 
     class Meta:
         app_label = 'divisions'
@@ -54,8 +51,8 @@ class Class(AbstractBase):
 
         return super(Class, self).save(force_insert, force_update, using, update_fields)
 
-    def __unicode__(self):
-        return '{} - {}'.format(self.created_by.institution.name, self.name)
+    # def __unicode__(self):
+    #     return '{} - {}'.format(self.created_by.institution.name, self.name)
 
     class Meta:
         app_label = 'divisions'
